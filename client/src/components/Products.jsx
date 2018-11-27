@@ -8,12 +8,12 @@ import { ratingToStarTranslation } from '../../../helpers/helperFuncs.js';
 
 const Products = function(props) {
   const images = props.products.image;
-  const imagesArr = JSON.parse(images);
+  // const imagesArr = JSON.parse(images);
 
   const price = props.products.price.toString();
 
   const correctPrice = function(str) {
-    return str.length === 5 ? '$' + str.slice(0, 3) : '$' + str.slice(0, 2);
+    return '$' + str.slice(0,-2);
   };
 
   const randomRating = () => Math.floor(Math.random() * 100);
@@ -27,9 +27,7 @@ const Products = function(props) {
           <div className={style.productInfo}>
             <img
               className={style.img}
-              src={`http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${
-                imagesArr[0].id
-              }/zoom/${imagesArr[0].fileName}?sh=1024`}
+              src={images}
             />
             <div className={style.favorite}>
               <div className={style.toggleWishList}>
@@ -41,7 +39,7 @@ const Products = function(props) {
               <div className={style.productPrice}>{correctPrice(price)}</div>
             </div>
             <div className={style.timRating}>
-              {ratingToStarTranslation(randomStars()).map((value, index) => (
+              {ratingToStarTranslation(props.products.rating).map((value, index) => (
                 <SvgStar index={randomId()} value={value} />
               ))}
               <div className={style.numbersOfRaters}>{randomRating()}</div>

@@ -27,7 +27,7 @@ export default class Carousel extends Component {
       this.setState({
         products: this.props.products,
       });
-    }
+    }  
   }
 
   next() {

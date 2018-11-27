@@ -16,7 +16,8 @@
     "start": "nodemon server/server.js",
     "build": "webpack -w",
     "test": "jest",
-    "seed": "node database/seed/seed.js"
+    "seed": "node --max-old-space-size=4096 database/seed/seed.js",
+    "scrape": "node database/seed/scrape.js"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
@@ -31,6 +32,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "css-loader": "^1.0.1",
+    "csv": "^4.0.0",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "faker": "^4.1.0",
@@ -38,9 +40,11 @@
     "iconv-lite": "^0.4.24",
     "import-local": "^2.0.0",
     "jest-cli": "^23.6.0",
+    "json2csv": "^4.3.0",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
+    "newrelic": "^4.11.0",
     "node": "^11.0.0",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",

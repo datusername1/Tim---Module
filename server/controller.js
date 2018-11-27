@@ -5,7 +5,8 @@ const db = require('../database/models.js');
 
 const Controller = {
   get: (req, res) => {
-    db.Products.findAll({})
+    console.log(req.query);
+    db.Products.findById(req.query.id)
       .then(data => res.status(200).send(data))
       .catch(err => console.error(err));
   },

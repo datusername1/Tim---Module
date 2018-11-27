@@ -28,8 +28,8 @@ export default class ProductDetails extends Component {
 
   render() {
     //for Specs;
-    const specifications = this.props.products.specification;
-    const specArr = JSON.parse(specifications);
+    // const specifications = this.props.products.specification;
+    // const specArr = JSON.parse(specifications);
 
     return (
       <div className={style.boostParent}>
@@ -71,7 +71,7 @@ export default class ProductDetails extends Component {
           <div
             className={this.state.viewChange === 'Description' ? style.productDisplay : style.hide}
           >
-            <Description products={this.props.products} />
+            {/* <Description products={this.props.products} /> */}
           </div>
 
           <div
@@ -79,21 +79,21 @@ export default class ProductDetails extends Component {
               this.state.viewChange === 'Specification' ? style.specifications : style.hide
             }
           >
-            <Specifications specs={specArr} />
+            {/* <Specifications specs={specArr} /> */}
           </div>
 
           <div className={this.state.viewChange === 'Highlights' ? style.highlights : style.hide}>
-            <HighLights highlights={exportObj.highlights} />
+            {/* <HighLights highlights={exportObj.highlights} /> */}
           </div>
         </div>
         <div className={style.snapshot}>
           <h1 className={style.h1}>Product Snapshot</h1>
           <div className={style.snapshotParent}>
-            <ProductSnapshot snapshots={exportObj} />
+            {/* <ProductSnapshot snapshots={exportObj} /> */}
           </div>
         </div>
         <div className={style.picturesShare}>
-          <PicturesShare />
+          {/* <PicturesShare /> */}
         </div>
       </div>
     );

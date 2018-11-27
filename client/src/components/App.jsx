@@ -20,18 +20,21 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData();
+    let sixteen = [];
+    for ( let n = 0; n < 16; n++ ) {
+      this.fetchData(sixteen);
+    }
   }
 
-  fetchData() {
+  fetchData(array) {
     axios
-      .get('shoedidas/product/details')
+      .get('shoedidas/product/details', {params: { id: Math.ceil(Math.random() * 100) + 9000000}})
       .then(data => {
-        let product = data.data;
-        let randomized = product.sort(() => 0.5 - Math.random());
-        let selected = randomized.slice(0, 50);
+
+        array.push(data.data);
+
         this.setState({
-          products: selected,
+          products: array,
         });
       })
       .catch(err => console.error(err));
@@ -42,17 +45,17 @@ export default class App extends Component {
     const boostTemp = [];
     const otherProducts = [];
 
-    productArr.forEach(boost => {
-      if (boost.item_name.toLowerCase().includes('ultraboost')) {
-        boostTemp.push(boost);
-      } else {
-        otherProducts.push(boost);
-      }
-    });
+    // productArr.forEach(boost => {
+    //   if (boost.item_name.toLowerCase().includes('ultraboost')) {
+    //     boostTemp.push(boost);
+    //   } else {
+    //     otherProducts.push(boost);
+    //   }
+    // });
 
     //One Product for details
     // const oneProduct = productArr.slice(0, 1);
-    const ultraBoost = boostTemp.slice(0, 1);
+    const ultraBoost = this.state.products.slice(0, 1);
 
     // to use for Carousel
     const selectedRecs = otherProducts.slice(0, 16);
@@ -63,19 +66,19 @@ export default class App extends Component {
     let toRender;
 
     if (this.props.view === 'productDetails') {
-      toRender = (
-        <div>
-          <div className={style.boost}>
-            {ultraBoost.map((value, i) => (
-              <BoostDetails products={value} />
-            ))}
-          </div>
+      // toRender = (
+      //   <div>
+      //     <div className={style.boost}>
+      //       {ultraBoost.map((value, i) => (
+      //         <BoostDetails products={value} />
+      //       ))}
+      //     </div>
 
-          <div className={style.pictureFeed}>
-            <div className="elfsight-app-63ecb780-3c15-47e5-89b8-9ea83d0343c9" />
-          </div>
-        </div>
-      );
+      //     {/* <div className={style.pictureFeed}>
+      //       <div className="elfsight-app-63ecb780-3c15-47e5-89b8-9ea83d0343c9" />
+      //     </div> */}
+      //   </div>
+      // );
     } else if (this.props.view === 'recommended') {
       toRender = (
         <div className={style.mainRecContainer}>
@@ -84,7 +87,7 @@ export default class App extends Component {
             <div className={style.recPadding}>
               <div className={style.recTransformer}>
                 <span>
-                  <Carousel products={selectedRecs} />
+                  <Carousel products={this.state.products} />
                 </span>
               </div>
             </div>
@@ -92,35 +95,35 @@ export default class App extends Component {
         </div>
       );
     } else if (this.props.view === 'othersAlsoBought') {
-      toRender = (
-        <div className={style.mainRecContainer}>
-          <h2 className={style.h2}>Others Also Bought</h2>
-          <div className={style.recRow}>
-            <div className={style.recPadding}>
-              <div className={style.recTransformer}>
-                <span>
-                  <Carousel products={selectedOtherBought} />
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      // toRender = (
+      //   <div className={style.mainRecContainer}>
+      //     <h2 className={style.h2}>Others Also Bought</h2>
+      //     <div className={style.recRow}>
+      //       <div className={style.recPadding}>
+      //         <div className={style.recTransformer}>
+      //           <span>
+      //             <Carousel products={selectedOtherBought} />
+      //           </span>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // );
     } else if (this.props.view === 'recentlyViewed') {
-      toRender = (
-        <div className={style.mainRecContainer}>
-          <h2 className={style.h2}>Recently Viewed Items</h2>
-          <div className={style.recRow}>
-            <div className={style.recPadding}>
-              <div className={style.recTransformer}>
-                <span>
-                  <Carousel products={selectedRecent} />
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      // toRender = (
+      //   <div className={style.mainRecContainer}>
+      //     <h2 className={style.h2}>Recently Viewed Items</h2>
+      //     <div className={style.recRow}>
+      //       <div className={style.recPadding}>
+      //         <div className={style.recTransformer}>
+      //           <span>
+      //             <Carousel products={selectedRecent} />
+      //           </span>
+      //         </div>
+      //       </div>
+      //     </div>
+      //   </div>
+      // );
     }
 
     return (
