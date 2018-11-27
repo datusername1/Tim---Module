@@ -17,6 +17,7 @@ const fakeDataGenerator = (n) => {
       // src.write(`,Ultraboost v${count},18000,https://s3-us-west-1.amazonaws.com/shoeboost/${Math.ceil(Math.random()*36)}.jpg,${Math.ceil(Math.random()*5)}\n`);
     }
   }
+  
   src.end();
   console.timeEnd('write time');
 
