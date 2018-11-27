@@ -2,3 +2,4 @@ node_modules
 client/dist/bundle.js
 config.js
 .env
+database/seed/seed.csv
