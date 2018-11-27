@@ -1,0 +1,22 @@
+.RightArrow {
+  position: absolute;
+  top: 27%;
+  right: -155px;
+  color: #837979;
+  width: 3%;
+  background-color: white;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
+  right: -155px;
+}
+
+.RightArrow:hover {
+  cursor: pointer;
+  background-color: #2e2b2b;
+  color: white;
+}
+
+.arrowHidden {
+  visibility: hidden;
+}

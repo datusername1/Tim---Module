@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'AdineuePro';
+  src: url('https://www.adidas.com/glass/assets/fonts/adidas/adineuePRO-Bold.woff2')
+    format('woff2');
+}
+
+@font-face {
+  font-family: 'AdihausDIN';
+  src: url('https://www.adidas.com/glass/assets/fonts/adidas/AdihausDIN-Regular.woff2')
+    format('woff2');
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1240px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  font-family: AdihausDIN, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  /* font-size: 16px; */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* for h2 only  */
+.h2 {
+  font-family: AdineuePRO, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  font-size: 42px;
+  line-height: 38px;
+  display: flex;
+  justify-content: center;
+}
+
+/* These are for recommendations  */
+
+.mainRecDiv {
+  margin-top: 80px;
+}
+
+.mainRecContainer {
+  margin-top: 140px;
+  padding-bottom: 86px;
+  width: 1147.5px;
+}
+
+.recRow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.recPadding {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 984px;
+}
+
+.recWrapper {
+  overflow: hidden;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  max-width: 1366px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+}
+
+.recTransformer {
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+.boost {
+  max-width: 1260px;
+}
+
+.pictureFeed {
+  width: 1162.5px;
+  display: flex;
+  justify-content: center;
+  border: 0px;
+  /* margin-right: -59px; */
+  justify-content: center;
+  position: relative;
+  left: 47px;
+}
+
+.elfsight-app-63ecb780-3c15-47e5-89b8-9ea83d0343c9 {
+  /* z-index: auto; */
+}

@@ -1,0 +1,50 @@
+.highlightTitle {
+  font-family: AdineuePRO, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: -2%;
+}
+
+.highlightWrapper {
+  margin-right: 20px;
+  display: flex;
+}
+
+.firstWrapper {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  left: 438px;
+}
+
+.secondWrapper {
+  display: flex;
+  position: relative;
+  top: 179px;
+  left: -26%;
+}
+
+.first {
+  list-style-position: outside;
+  width: 441px;
+  margin-right: -52px;
+}
+
+.bodyy {
+  margin-top: 23px;
+}
+
+.second {
+  margin-right: 95px;
+  width: 321px;
+  list-style-position: outside;
+}
+
+.secondBody {
+  width: 90%;
+  margin-top: 23px;
+}
