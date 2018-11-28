@@ -16,7 +16,7 @@ const Products = function(props) {
     return '$' + str.slice(0,-2);
   };
 
-  const randomRating = () => Math.floor(Math.random() * 100);
+  const randomRating = () => Math.ceil(Math.random() * 100);
   const randomId = () => Math.random() * 0.9999;
   const randomStars = () => Math.random() * (5 - 3) + 3;
 
