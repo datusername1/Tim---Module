@@ -20,20 +20,16 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    let shoes = [];
-
-    for ( let n = 0; n < 16; n++ ) {
-      this.fetchData(shoes);
-    }
+    this.fetchData();
   }
 
-  fetchData(array) {
+  fetchData() {
     axios
       .get('shoedidas/product/details', {params: { id: Math.floor(Math.random() * 1000000) + 9000000}})
       .then(data => {
-        array.push(data.data);
+        console.log(data.data);
         this.setState({
-          products: array,
+          products: data.data,
         });
       })
       .catch(err => console.error(err));
@@ -82,7 +78,7 @@ export default class App extends Component {
               <div className={style.recPadding}>
                 <div className={style.recTransformer}>
                   <span>
-                    <Carousel products={this.state.products} />
+                    <Carousel products={this.state.products.slice(1)} />
                   </span>
                 </div>
               </div>
