@@ -6,7 +6,7 @@ const db = require('../database/models.js');
 const Controller = {
   get: (req, res) => {
     console.log(req.query);
-    db.Products.findById(req.query.id)
+    db.Products.findOne({ where: req.query })
       .then(data => res.status(200).send(data))
       .catch(err => console.error(err));
   },

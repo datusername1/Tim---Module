@@ -20,9 +20,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    let sixteen = [];
+    let shoes = [];
+
     for ( let n = 0; n < 16; n++ ) {
-      this.fetchData(sixteen);
+      this.fetchData(shoes);
     }
   }
 
@@ -30,9 +31,7 @@ export default class App extends Component {
     axios
       .get('shoedidas/product/details', {params: { id: Math.floor(Math.random() * 1000000) + 9000000}})
       .then(data => {
-
         array.push(data.data);
-
         this.setState({
           products: array,
         });
@@ -77,21 +76,24 @@ export default class App extends Component {
           {/* <div className={style.pictureFeed}>
             <div className="elfsight-app-63ecb780-3c15-47e5-89b8-9ea83d0343c9" />
           </div> */}
+          <div className={style.mainRecContainer}>
+            <h2 className={style.h2}>You May Also Like</h2>
+            <div className={style.recRow}>
+              <div className={style.recPadding}>
+                <div className={style.recTransformer}>
+                  <span>
+                    <Carousel products={this.state.products} />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       );
     } else if (this.props.view === 'recommended') {
       toRender = (
-        <div className={style.mainRecContainer}>
-          <h2 className={style.h2}>You May Also Like</h2>
-          <div className={style.recRow}>
-            <div className={style.recPadding}>
-              <div className={style.recTransformer}>
-                <span>
-                  <Carousel products={this.state.products} />
-                </span>
-              </div>
-            </div>
-          </div>
+        <div>
+
         </div>
       );
     } else if (this.props.view === 'othersAlsoBought') {
