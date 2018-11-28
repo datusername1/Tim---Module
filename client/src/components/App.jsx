@@ -66,19 +66,19 @@ export default class App extends Component {
     let toRender;
 
     if (this.props.view === 'productDetails') {
-      // toRender = (
-      //   <div>
-      //     <div className={style.boost}>
-      //       {ultraBoost.map((value, i) => (
-      //         <BoostDetails products={value} />
-      //       ))}
-      //     </div>
+      toRender = (
+        <div>
+          <div className={style.boost}>
+            {ultraBoost.map((value, i) => (
+              <BoostDetails products={value} />
+            ))}
+          </div>
 
-      //     {/* <div className={style.pictureFeed}>
-      //       <div className="elfsight-app-63ecb780-3c15-47e5-89b8-9ea83d0343c9" />
-      //     </div> */}
-      //   </div>
-      // );
+          {/* <div className={style.pictureFeed}>
+            <div className="elfsight-app-63ecb780-3c15-47e5-89b8-9ea83d0343c9" />
+          </div> */}
+        </div>
+      );
     } else if (this.props.view === 'recommended') {
       toRender = (
         <div className={style.mainRecContainer}>

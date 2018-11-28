@@ -71,7 +71,7 @@ export default class ProductDetails extends Component {
           <div
             className={this.state.viewChange === 'Description' ? style.productDisplay : style.hide}
           >
-            {/* <Description products={this.props.products} /> */}
+            <Description products={this.props.products} />
           </div>
 
           <div
@@ -86,15 +86,15 @@ export default class ProductDetails extends Component {
             {/* <HighLights highlights={exportObj.highlights} /> */}
           </div>
         </div>
-        <div className={style.snapshot}>
+        {/* <div className={style.snapshot}>
           <h1 className={style.h1}>Product Snapshot</h1>
           <div className={style.snapshotParent}>
-            {/* <ProductSnapshot snapshots={exportObj} /> */}
+            <ProductSnapshot snapshots={exportObj} />
           </div>
-        </div>
-        <div className={style.picturesShare}>
-          {/* <PicturesShare /> */}
-        </div>
+        </div> */}
+        {/* <div className={style.picturesShare}>
+          <PicturesShare />
+        </div> */}
       </div>
     );
   }
