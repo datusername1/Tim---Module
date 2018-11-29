@@ -9,8 +9,8 @@ const Description = function(props) {
     <div className={style.display}>
       <div className={style.description}>
         <h4 className={style.h4}>{product.item_name}</h4>
-        <h5 className={style.h5}>{"catchphrase"}</h5>
-        <p className={style.p}>{"description"}</p>
+        <h5 className={style.h5}>{product.category}</h5>
+        <p className={style.p}>{product.adidas_id}</p>
       </div>
       <div>
         <img
