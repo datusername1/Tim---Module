@@ -36,4 +36,4 @@ const fakeDataGenerator = (n) => {
   }); 
 };
 
-fakeDataGenerator(100000);
+fakeDataGenerator(10);

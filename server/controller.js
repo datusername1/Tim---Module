@@ -21,7 +21,7 @@ const Controller = {
         category = data.dataValues.category;
       })
       .then(() => {
-        console.log(category);
+        // console.log(category);
         db.Products.findAll({ where: { category, id: { [gt]: req.query.id } }, limit: 16 })
           .then(data => {
             for ( let shoe of data ) {
@@ -29,7 +29,7 @@ const Controller = {
             }
           })
           .then(() => {
-            console.log(response);
+            // console.log(response);
             res.status(200).send(response);
           })
           .catch(err => console.error(err));
