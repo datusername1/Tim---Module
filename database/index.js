@@ -2,7 +2,9 @@ const Sequelize = require('sequelize');
 const { env } = require('../env/.env');
 
 const sequelize = new Sequelize(env.database, env.dbHost, env.dbPassword, {
-  host: env.HOSTNAME,
+  host: '13.52.45.76',
+  // host: 'localhost',
+  port: '3306',
   dialect: 'mysql',
   logging: false,
   pool: {
