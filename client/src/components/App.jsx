@@ -25,7 +25,7 @@ export default class App extends Component {
 
   fetchData() {
     axios
-      .get('shoedidas/product/details', {params: { id: Math.ceil(Math.random() * 900)}})
+      .get('shoedidas/product/details', {params: { id: Math.ceil(Math.random() * 1000000) +9000000}})
       .then(data => {
         // console.log(data.data);
         this.setState({

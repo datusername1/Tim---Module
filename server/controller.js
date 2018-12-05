@@ -7,12 +7,7 @@ const { gt } = Sequelize.Op;
 // TO USE: db.Products.aMethodHere
 
 const Controller = {
-  get: (req, res) => {
-    console.log(req.query); 
-    // db.Products.findAll({ where: req.query , limit: 10 })
-    //   .then(data => res.status(200).send(data[0]))
-    //   .catch(err => console.error(err));
-    
+  get: (req, res) => {    
     let category;
     let response = [];
     db.Products.findByPk(req.query.id)
