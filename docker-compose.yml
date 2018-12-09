@@ -12,15 +12,15 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: timtran
     ports:
-      - '3307:3306'
+      - '3309:3306'
     # command: '--innodb_use_native_aio=0'
 
-  app:
-    container_name: app
+  tim-module:
+    container_name: tim-module
     restart: always
     build: .
     ports:
-      - '80:1128'
+      - '3002:3002'
     links:
       - productDB
     # depends_on:
