@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 // const { env } = require('../env/.env');
 
 const sequelize = new Sequelize('fec', 'root', 'timtran', {
-  host: 'productDB',
+  host: '34.217.10.10',
   dialect: 'mysql',
 
   pool: {
