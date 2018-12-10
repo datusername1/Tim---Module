@@ -1,19 +1,19 @@
 version: '3'
 services:
-  productDB:
-    image: mysql:5.7
-    restart: always
-    volumes:
-      - ./docker/data/db:/var/lib/mysql
-      - ./mysql_local.cnf:/etc/mysql/conf.d/mysql_local.cnf:ro
-    environment:
-      MYSQL_ROOT_PASSWORD: timtran
-      MYSQL_DATABASE: fec
-      MYSQL_USER: root
-      MYSQL_PASSWORD: timtran
-    ports:
-      - '3309:3306'
-    # command: '--innodb_use_native_aio=0'
+  # productDB:
+  #   image: mysql:5.7
+  #   restart: always
+  #   volumes:
+  #     - ./docker/data/db:/var/lib/mysql
+  #     - ./mysql_local.cnf:/etc/mysql/conf.d/mysql_local.cnf:ro
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: timtran
+  #     MYSQL_DATABASE: fec
+  #     MYSQL_USER: root
+  #     MYSQL_PASSWORD: timtran
+  #   ports:
+  # - '3307:3306'
+  # command: '--innodb_use_native_aio=0'
 
   tim-module:
     container_name: tim-module
@@ -21,8 +21,8 @@ services:
     build: .
     ports:
       - '3002:3002'
-    links:
-      - productDB
+    # links:
+    #   - productDB
     # depends_on:
     #   - productDB
     # port:
