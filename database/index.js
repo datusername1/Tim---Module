@@ -2,16 +2,9 @@ const mysql = require('mysql');
 const Sequelize = require('sequelize');
 // const { env } = require('../env/.env');
 
-const sequelize = new Sequelize('fec', 'root', 'timtran', {
+const sequelize = new Sequelize('adidas', 'postgres', 'timtran', {
   host: 'productDB',
-  dialect: 'mysql',
-
-  pool: {
-    max: 2,
-    min: 0,
-    acquire: 30000,
-    idle: 5000,
-  },
+  dialect: 'postgres',
 });
 
 sequelize
