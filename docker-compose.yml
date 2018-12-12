@@ -12,10 +12,8 @@ services:
     ports:
       - '3309:5432'
 
-    # command: '--innodb_use_native_aio=0'
-
-  tim-module:
-    container_name: tim-module
+  app:
+    container_name: tim
     restart: always
     build: .
     ports:
