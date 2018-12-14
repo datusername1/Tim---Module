@@ -25,7 +25,7 @@ As of December 2018, there are issues with npm packages. Components may not func
 Hayden Betts (@haydenbetts)\
 Tim Tran (@datusername1)\
 Omar Jandali (@omar-jandali)\
-Matthew Lin (@mlin367)\
+Matthew Lin (@mlin367)
 
 ## How to run file locally 
 Please run the followings information:
