@@ -37,6 +37,9 @@ npm run build - for webpack
 ```
 
 Currently using Mysql server.\
+**important**\
+Project was switched to Postgresdb when deployed.\
+Database index.js login will required changes to match with user authentication fo Postgres.\
 You will need to set up mysql database prior to seeding the file.\
 Since env is currently not being ignored, change the username and password for database manually to reflect your local database credential.A
 
@@ -44,8 +47,10 @@ Two ways of accessing the database to generate new table:\
 first: you can create your own .env file and replace example string with your actual mysql information.\
 sencond: you can replace it directly wihtin database.js.
 
-Seedfile - Can mostly work if you use running shoes.
-
+## Seeding fake data:
+```
+npm run seed
+```
 The function to seed data is currently commented out.\
 Please pick what type of data you would like to seed into your db.\
 Mix and match are recommended.\
