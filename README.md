@@ -22,10 +22,14 @@ As of December 2018, there are issues with npm packages. Components may not func
 ## Shoedidas Team:
 > Hack Reactor Los Angeles 25:
 
-Hayden Betts (@haydenbetts)\
-Tim Tran (@datusername1)\
-Omar Jandali (@omar-jandali)\
-Matthew Lin (@mlin367)
+Hayden Betts\
+> https://github.com/haydenbetts
+Tim Tran\
+> https://github.com/ttran835
+Omar Jandali\
+> https://github.com/omar-jandali
+Matthew Lin\
+> https://github.com/mlin367
 
 ## How to run file locally 
 Please run the followings information:
